@@ -30,3 +30,9 @@ console.log(marvel.slice(1, 2));
 console.log(marvel);
 console.log(marvel.splice(1, 2));
 console.log(marvel);
+
+let array1 = ["hi", "how", "are", "you"];
+let array2 = ["i", "am", "good"];
+console.log(array1.concat(array2));
+let newone = [...array1, ...array2];
+console.log(newone);
