@@ -33,3 +33,13 @@ languages.forEach(lang);
 // for of loop works on  Array map, string, sets iteartes overvalue
 // for in loop works on  Objects iteartes over key value pairs
 // for each loop works on  Arrays only iteartes over  value with optional index
+let languagess = [
+  { language: "js", file: ".js" },
+  { language: "phyton", file: ".py" },
+];
+languagess.forEach((items) => {
+  console.log(items);
+});
+languagess.forEach((items) => {
+  console.log(items.language);
+});
