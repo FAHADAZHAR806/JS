@@ -1,1 +1,6 @@
-document.getElementsByClassName("heading").innerHTML = <h1>Hello</h1>;
+const changtext = function () {
+  console.log("change");
+
+  return changtext;
+};
+changtext();
