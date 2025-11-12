@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="parent">
+    <p class="para">Click Me</p>
+    <h1 class="head"> Click head</h1>
+  </div>
+
+  <script>
+    document.querySelector(".parent").addEventListener('click', function (e) {
+      e.preventDefault()
+      e.stopPropagation()
+      console.log("I am parent")
+    },)
+    document.querySelector(".head").addEventListener('click', function (e) {
+      e.preventDefault()
+      e.stopPropagation()
+      console.log("I am head")
+    })
+    // event propogation by default is event bubbling tom bottom to top and default value is false
+    // event propation by setting value true is event capturing from top to bottom
+    //to stop evet propogation use e.stopPropagation()
+  </script>
+</body>
+
+
+
+</html>
