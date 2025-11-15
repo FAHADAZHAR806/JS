@@ -7,12 +7,32 @@
   <title>Document</title>
 </head>
 
+
 <body>
+  <h1 class="name" style="text-align: center;"></h1>
+  <div style="display: flex; flex-direction: row ; justify-content: center;">
+    <img alt="" srcset="" style="width: 80px; height: 80px; margin: auto;">
+
+  </div>
   <script>
     const xhr = new XMLHttpRequest()
     const request = `https://api.github.com/users/FAHADAZHAR806`
     xhr.open("Get", request)
-    console.log(xhr.readyState);
+    xhr.onreadystatechange = function () {
+      console.log(xhr.readyState);
+      if (xhr.readyState === 4) {
+        let data = JSON.parse(this.responseText)
+        console.log(data.name);
+        console.log(data.avatar_url);
+        const head = document.querySelector("h1")
+        head.innerHTML = data.name
+        const image = document.querySelector("img")
+        image.setAttribute("src", `${data.avatar_url}`)
+
+
+      }
+
+    }
     xhr.send()
 
 
