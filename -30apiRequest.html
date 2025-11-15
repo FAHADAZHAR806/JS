@@ -9,14 +9,19 @@
 
 
 <body>
-  <h1 class="name" style="text-align: center;"></h1>
+  <h1 class="name" style="text-align: center;">Hello</h1>
   <div style="display: flex; flex-direction: row ; justify-content: center;">
-    <img alt="" srcset="" style="width: 80px; height: 80px; margin: auto;">
+    <img alt="no-img" srcset="" style="width: 80px; height: 80px; margin: auto;">
 
   </div>
+  <button class="btn">Change</button>
   <script>
-    const xhr = new XMLHttpRequest()
+    const head = document.querySelector("h1")
+    const button = document.querySelector(".btn")
+    const image = document.querySelector("img")
     const request = `https://api.github.com/users/FAHADAZHAR806`
+
+    const xhr = new XMLHttpRequest()
     xhr.open("Get", request)
     xhr.onreadystatechange = function () {
       console.log(xhr.readyState);
@@ -24,10 +29,11 @@
         let data = JSON.parse(this.responseText)
         console.log(data.name);
         console.log(data.avatar_url);
-        const head = document.querySelector("h1")
-        head.innerHTML = data.name
-        const image = document.querySelector("img")
-        image.setAttribute("src", `${data.avatar_url}`)
+        button.addEventListener("click", function () {
+          head.innerHTML = data.name
+          image.setAttribute("src", `${data.avatar_url}`)
+
+        })
 
 
       }
