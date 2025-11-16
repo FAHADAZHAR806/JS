@@ -26,3 +26,11 @@ async function Display() {
   console.log(result);
 }
 Display();
+
+async function API() {
+  const response = await fetch("https://api.github.com/users/FAHADAZHAR806");
+  const data = await response.json();
+
+  console.log(data.name); // ✔ Correct
+}
+API();
