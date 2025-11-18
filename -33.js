@@ -9,8 +9,8 @@ async function API() {
     const response = await data.json();
     namee.innerHTML = response.name;
     image.setAttribute("src", `${response.avatar_url}`);
-    Follower.innerHTML = response.followers;
-    Following.innerHTML = response.following;
+    Follower.innerHTML = `Follower ${response.followers}`;
+    Following.innerHTML = `Following ${response.following}`;
   } catch (error) {
     console.log("Some Thing Went Wrong", error);
   }
