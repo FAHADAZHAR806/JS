@@ -16,3 +16,15 @@ function Parent() {
   child2();
 }
 Parent();
+
+/// Clouser
+
+function init() {
+  const name = "Fahadd";
+  function displayName() {
+    console.log(name);
+  }
+  return displayName;
+}
+const myfun = init();
+console.log(myfun());
