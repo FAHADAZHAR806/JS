@@ -9,3 +9,15 @@ function createUser(username, email, password) {
 }
 const Fahad = new createUser("Fahad", "faha@123", "abc123");
 console.log(Fahad);
+
+//const PI = Object.getOwnPropertyDescriptor(Math, "PI");
+//console.log(PI);
+
+Object.defineProperty(Math, "PI", {
+  writable: true,
+  enumerable: false,
+  configurable: true,
+});
+
+Math.PI = 7; // set whatever value you want
+console.log(Math.PI);
