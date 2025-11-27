@@ -22,7 +22,7 @@ function myFilter(arr, callback) {
 function filtered(x) {
   return x > 4;
 }
-console.log(myFilter([1, 2, 3, 4, 5, 6, 9], filtered))
+console.log(myFilter([1, 2, 3, 4, 5, 6, 9], filtered));
 
 function delayMessage(message, callback) {
   console.log("waiting");
@@ -35,3 +35,11 @@ function done() {
   console.log("done");
 }
 delayMessage("Hello Fadi", done);
+
+function repeatNTimes(callback, n) {
+  for (let i = 1; i <= n; i++) {
+    callback();
+  }
+  console.log("Done repeating");
+}
+repeatNTimes(() => console.log("Hello"), 3);
