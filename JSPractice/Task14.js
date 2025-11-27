@@ -30,3 +30,7 @@ Promise.race([prom1,prom2]).then((res)=>{
   console.log(res);
   
 })
+Promise.allSettled([p1,p2,p3]).then((res)=>{
+  console.log(res);
+  
+})
